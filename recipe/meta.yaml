@@ -1,5 +1,5 @@
 {% set name = "ilpy" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad14b0670c6813aee36d33a4129eedd3d64b97cb3626bf1ced23d2950f466257
+  sha256: ec762291186ea92b2b6c5650fe9ad3f61492d832d67d591162a68575e23cbc80
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
