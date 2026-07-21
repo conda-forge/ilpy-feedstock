@@ -1,5 +1,6 @@
 {% set name = "ilpy" %}
-{% set version = "0.5.2" %}
+{% set version = "0.6.0" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 875883d1f83d9508ccd6357d96cd879f345dc3288af0f0d58272771667a57c58
+  sha256: d8aa0938e8fead138b742c13ff2411fa9ccf406ed412b2fb511f8a8a3d37dc05
 
 build:
   noarch: python
@@ -22,13 +23,17 @@ requirements:
     - hatch-vcs
   run:
     - python >={{ python_min }}
-    - numpy
+    - pyscipopt
 
 test:
   imports:
     - ilpy
   requires:
+    - pip
     - python {{ python_min }}
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert version('ilpy') == '{{ version }}'"
 
 about:
   home: https://github.com/funkelab/ilpy
