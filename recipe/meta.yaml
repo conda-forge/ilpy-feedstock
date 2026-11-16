@@ -1,5 +1,5 @@
 {% set name = "ilpy" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d8aa0938e8fead138b742c13ff2411fa9ccf406ed412b2fb511f8a8a3d37dc05
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: aabdbaad8e874086ccfbf15d34267651c38f99c6de5ac44f64c02351f89ff673
 
 build:
   noarch: python
